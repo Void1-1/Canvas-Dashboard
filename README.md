@@ -108,5 +108,3 @@ data/
 Next.js App Router · TypeScript · Tailwind CSS · SQLite (better-sqlite3) · JWT (HS512) · bcryptjs · Framer Motion · jose (edge JWT)
 
 ---
-
-**Licensed for personal use. Have fun & study well!**
