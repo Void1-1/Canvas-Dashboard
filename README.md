@@ -13,7 +13,7 @@ A self-hosted, multi-user Canvas LMS dashboard built with **Next.js App Router**
 - Dashboard cards for current courses, upcoming assignments & events, recent announcements
 - Grades, calendar, classes, and announcements pages
 - Mobile-friendly, responsive design
-- Ready for self-hosted or Vercel deployment
+- Ready for self-hosted deployment
 
 ---
 
@@ -57,7 +57,6 @@ CANVAS_CLIENT_SECRET=<optional, Canvas OAuth developer key client secret>
 SQLITE_DB_PATH=<optional, defaults to data/canvas-dashboard.db>
 NEXT_PUBLIC_BASE_URL=<optional, defaults to http://localhost:3000; required for OAuth redirect URIs>
 TRUST_PROXY=<set to "true" only when behind a reverse proxy (nginx, Caddy) that sets x-forwarded-for — enables accurate IP logging>
-DEV_ACCESS_KEY=<dev/staging only — passphrase to enable dev testing panel; must NOT be set in production>
 ```
 
 The SQLite database is created automatically on first run at `data/canvas-dashboard.db`.
@@ -81,7 +80,6 @@ src/
       first-time/   # GET — returns { hasUsers } for bootstrap redirect
       oauth/        # authorize, callback, disconnect, status
       account/      # change-password, delete, token-status, update-canvas-token, login-history
-      dev/          # access, revoke, status (dev/staging only)
   components/       # Reusable UI components
   lib/              # Server-side helpers
     auth.ts         # JWT creation/verification, password hashing
@@ -106,5 +104,3 @@ data/
 ## Stack
 
 Next.js App Router · TypeScript · Tailwind CSS · SQLite (better-sqlite3) · JWT (HS512) · bcryptjs · Framer Motion · jose (edge JWT)
-
----
