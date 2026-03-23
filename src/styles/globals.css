@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Calm minimalist palette */
+  --color-bg: #f5f3ec; /* cream */
+  --color-surface: #ffffff;
+  --color-text: #3e3b32; /* taupe */
+  --color-muted: #6b6a64;
+  --color-accent: #c89b7b; /* soft clay */
+  --color-border: rgba(0, 0, 0, 0.06);
+  --color-glass: rgba(255, 255, 255, 0.7);
+  --color-danger: #a64444; /* muted brick red */
+}
+
+.dark {
+  --color-bg: #181825;
+  --color-surface: #232336;
+  --color-text: #f5f3ec;
+  --color-muted: #b3b3b3;
+  --color-accent: #e0b089;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-glass: rgba(36, 36, 54, 0.7);
+  --color-danger: #d97070; /* brighter for dark bg readability */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Smooth transitions for all CSS variables */
+* {
+  transition: 
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Override for elements that shouldn't transition */
+.no-transition,
+.no-transition * {
+  transition: none !important;
+}
+
+body {
+  @apply min-h-screen font-[Inter];
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Card-like translucent surface */
+.glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.card-title {
+  @apply font-semibold text-lg mb-3;
+  color: var(--color-text);
+}
+
+a, button {
+   transition: all 0.2s;
+ }
+
+/* Assignment and announcement description styling */
+.assignment-description,
+.announcement-description {
+  line-height: 1.6;
+}
+
+.assignment-description a,
+.announcement-description a,
+.assignment-description a:link,
+.announcement-description a:link,
+.assignment-description a:visited,
+.announcement-description a:visited {
+  color: var(--color-accent) !important;
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent);
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+
+.assignment-description a:hover,
+.announcement-description a:hover,
+.assignment-description a:active,
+.announcement-description a:active {
+  color: var(--color-accent) !important;
+  opacity: 0.8;
+}
+
+.assignment-description ul,
+.announcement-description ul,
+.assignment-description ol,
+.announcement-description ol {
+  margin: 0.75rem 0;
+  padding-left: 1.75rem;
+  list-style-position: outside;
+}
+
+.assignment-description ul,
+.announcement-description ul {
+  list-style-type: disc;
+}
+
+.assignment-description ol,
+.announcement-description ol {
+  list-style-type: decimal;
+}
+
+.assignment-description li,
+.announcement-description li {
+  margin: 0.4rem 0;
+  line-height: 1.7;
+  padding-left: 0.25rem;
+  display: list-item;
+  color: var(--color-text);
+}
+
+.assignment-description ul li,
+.announcement-description ul li {
+  list-style-type: disc;
+}
+
+.assignment-description ol li,
+.announcement-description ol li {
+  list-style-type: decimal;
+}
+
+/* Ensure list markers are visible */
+.assignment-description ul li::marker,
+.announcement-description ul li::marker {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.assignment-description ol li::marker,
+.announcement-description ol li::marker {
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+/* Nested lists */
+.assignment-description ul ul,
+.announcement-description ul ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+  list-style-type: circle;
+}
+
+.assignment-description ul ul ul,
+.announcement-description ul ul ul {
+  list-style-type: square;
+}
+
+.assignment-description ol ol,
+.announcement-description ol ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.assignment-description ul ol,
+.announcement-description ul ol,
+.assignment-description ol ul,
+.announcement-description ol ul {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.assignment-description p,
+.announcement-description p {
+  margin: 0.75rem 0;
+}
+
+.assignment-description p:first-child,
+.announcement-description p:first-child {
+  margin-top: 0;
+}
+
+.assignment-description p:last-child,
+.announcement-description p:last-child {
+  margin-bottom: 0;
+} 
