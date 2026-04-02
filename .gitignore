@@ -1,0 +1,38 @@
+# Node modules
+node_modules
+
+# Next.js build output
+.next
+
+# TS Build files
+*.tsbuildinfo
+next-env.d.ts
+
+# Local env files
+.env*
+!.env.example
+
+# Log files
+logs
+logs/canvas-dashboard.error.log
+logs/canvas-dashboard.out.log
+
+# SQLite data
+data/
+data/*.db
+data/*.db-wal
+data/*.db-shm
+
+# macOS system files
+.DS_Store
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode settings (optional)
+.vscode/
+
+# Claude Code Review
+.claude/
