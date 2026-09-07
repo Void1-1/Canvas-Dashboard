@@ -1,4 +1,4 @@
-# Canvas Dashboard
+# UNMAINTAINED: Canvas Dashboard
 
 A self-hosted, multi-user dashboard for Canvas LMS — built with **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
